@@ -1,5 +1,5 @@
 
-# 🚀 TypeScript + Storybook + Rollup 기반 디자인 시스템
+# 🚀 TypeScript + Storybook + Rollup-based Design System 
 <br>
 프로젝트를 진행할 때마다 같은 기능을 하는 컴포넌트를 반복해서 개발하는 비효율적인 상황이 자주 발생했습니다.<br>
 이러한 문제를 해결하기 위해 디자인 시스템을 구축하게 되었습니다.
