@@ -1,10 +1,9 @@
 
-# 🚀 TypeScript + Storybook + Rollup based Design System 
-<br>
-프로젝트를 진행할 때마다 같은 기능을 하는 컴포넌트를 반복해서 개발하는 비효율적인 상황이 자주 발생했습니다.<br>
-이러한 문제를 해결하기 위해 디자인 시스템을 구축하게 되었습니다.
+# 🚀 TypeScript + Storybook + Rollup based Design System     
+While working on multiple projects, I often found myself rebuilding the same components repeatedly, which was both time-consuming and inefficient.  <br>
+To address this issue, I decided to build a scalable design system.
 <br><br>
-컴포넌트는 Storybook을 활용해 문서화하여 쉽게 확인하고 사용할 수 있도록 했으며,<br>
-Rollup을 사용해 경량 패키지로 빌드 후 NPM 라이브러리로 배포하여,<br> 다양한 프로젝트에서 효율적으로 활용할 수 있도록 최적화했습니다.<br><br>
+Each component is documented and showcased using Storybook, making it easy to review, test, and reuse.  <br>
+The system is bundled with Rollup into a lightweight package and published as an NPM library, allowing seamless integration across different projects.<br>
 
-앞으로 지속적인 업데이트를 통해 더 다양한 컴포넌트를 추가하고, 시스템을 발전시켜 나갈 계획입니다.
+I plan to keep expanding the system by adding more components and improving its overall architecture over time.
