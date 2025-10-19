@@ -1,18 +1,139 @@
+/* 디자인 토큰 */
+:root {
+  --ds-radius-sm: 6px;
+  --ds-radius-md: 10px;
+  --ds-radius-lg: 14px;
+  --ds-gap: 8px;
+
+  --ds-bg: #ffffff;
+  --ds-fg: #111827;
+  --ds-border: #e5e7eb;
+
+  --ds-primary: #2563eb;          /* indigo-600 */
+  --ds-primary-700: #1d4ed8;
+  --ds-primary-100: #dbeafe;
+
+  --ds-secondary: #0ea5e9;        /* sky-500 */
+  --ds-secondary-700: #0284c7;
+  --ds-secondary-100: #e0f2fe;
+
+  --ds-danger: #ef4444;           /* red-500 */
+  --ds-danger-700: #dc2626;
+
+  --ring: #60a5fa;
+}
+
+/* 공통 레이아웃 */
+.button {
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 10px 24px rgba(0, 0, 0, 0.10);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ds-gap);
+  border: 1px solid var(--ds-border);
+  background: var(--ds-bg);
+  color: var(--ds-fg);
+  line-height: 1;
+  cursor: pointer;
+  transition: transform .04s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease, color .18s ease;
+  box-shadow: var(--shadow);
+  user-select: none;
+  position: relative;
+}
+
+.button:hover:not(:disabled) { box-shadow: var(--shadow-hover); transform: translateY(-1px); }
+.button:active:not(:disabled) { transform: translateY(0); }
+
+.button:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.button:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* 크기 */
+.size-sm { padding: 6px 10px; font-size: 12px; }
+.size-md { padding: 9px 14px; font-size: 14px; }
+.size-lg { padding: 13px 18px; font-size: 16px; }
+
+/* 라운드 */
+.rounded-sm { border-radius: var(--ds-radius-sm); }
+.rounded-md { border-radius: var(--ds-radius-md); }
+.rounded-lg { border-radius: var(--ds-radius-lg); }
+.rounded-pill { border-radius: 9999px; }
+
+/* 아이콘/라벨 */
+.icon { display: inline-flex; }
+.label { display: inline-block; }
+
+/* 변형(variant) */
+.primary {
+  background: var(--ds-primary);
+  border-color: var(--ds-primary);
+  color: #fff;
+}
+.primary:hover:not(:disabled) { background: var(--ds-primary-700); border-color: var(--ds-primary-700); }
+
+.secondary {
+  background: var(--ds-secondary);
+  border-color: var(--ds-secondary);
+  color: #072436;
+}
+.secondary:hover:not(:disabled) { background: var(--ds-secondary-700); border-color: var(--ds-secondary-700); color: #fff; }
+
+.danger {
+  background: var(--ds-danger);
+  border-color: var(--ds-danger);
+  color: #fff;
+}
+.danger:hover:not(:disabled) { background: var(--ds-danger-700); border-color: var(--ds-danger-700); }
+
 .default {
-    padding: 8px;
-    background: white;
-    border: white;
-    border-radius: 4px;
-  }
-  
-  .primary {
-    background: #03a9f4;
-    border: #03a9f4;
-    color: white;
-  }
-  
-  .secondary {
-    background: #a0ddf9;
-    border: #a0ddf9;
-    color: white;
-  }
+  background: var(--ds-bg);
+  color: var(--ds-fg);
+}
+.default:hover:not(:disabled) { background:#f8fafc; }
+
+.ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--ds-primary);
+}
+.ghost:hover:not(:disabled) { background: var(--ds-primary-100); }
+
+.outline {
+  background: transparent;
+  border-color: var(--ds-primary);
+  color: var(--ds-primary);
+}
+.outline:hover:not(:disabled) { background: var(--ds-primary-100); }
+
+/* 꽉차게 */
+.fullWidth { width: 100%; }
+
+/* 로딩 스피너 */
+@keyframes spin { to { transform: rotate(360deg); } }
+.spinner {
+  width: 1em;
+  height: 1em;
+  border-radius: 9999px;
+  border: 2px solid rgba(255,255,255,.6);
+  border-top-color: rgba(255,255,255,1);
+  animation: spin .8s linear infinite;
+  /* 라이트 버튼(ghost/outline/default)일 때 대비 */
+  mix-blend-mode: normal;
+}
+
+/* 라이트 배경용 스피너 색상 보정 */
+.default .spinner,
+.ghost .spinner,
+.outline .spinner {
+  border-color: rgba(0,0,0,.2);
+  border-top-color: rgba(0,0,0,.7);
+}
