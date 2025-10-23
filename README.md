@@ -1,5 +1,5 @@
 
-# 🚀 TypeScript + Storybook + Rollup based Design System     
+# TypeScript + Storybook + Rollup based Design System     
 While working on multiple projects, I often found myself rebuilding the same components repeatedly, which was both time-consuming and inefficient.  <br>
 To address this issue, I decided to build a scalable design system.
 <br><br>
