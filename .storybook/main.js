@@ -2,7 +2,9 @@ const path = require("path");
 
 module.exports = {
   stories: ["../**/*.stories.@(js|jsx|ts|tsx)"], 
-  addons: [],
+  addons: [
+    "@storybook/addon-essentials"
+  ],
   framework: "@storybook/react-webpack5", 
 
   webpackFinal: async (config) => { 
@@ -63,7 +65,8 @@ module.exports = {
   },
 
   docs: {
-    autodocs: true,
+    autodocs: 'tag',
+    defaultName: 'Docs',
   },
 
   //staticDirs: ["../public"], 

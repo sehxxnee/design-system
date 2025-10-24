@@ -1,21 +1,22 @@
 /* Mixins & Maps - _mixins.scss */
 
-// 크기별 속성 Map 정의 (style.module.scss에서 접근하기 위해 !global 선언이 필요할 수 있습니다.)
+// 크기별 속성 Map 정의
 $button-sizes: (
-  sm: (padding: 6px 10px, font-size: 12px),
-  md: (padding: 9px 14px, font-size: 14px),
-  lg: (padding: 13px 18px, font-size: 16px)
-) !global;
+  sm: (padding: 6px 14px, font-size: 12px),
+  md: (padding: 10px 18px, font-size: 14px),
+  lg: (padding: 14px 22px, font-size: 16px)
+);
 
-// 버튼 variant 믹스인 (CSS 변수를 사용하여 동적 색상 유지)
-@mixin button-variant($bg, $border, $color, $hover-bg, $hover-border, $hover-color: $color) {
+// 단일 Fill 스타일 버튼을 위한 믹스인 (배경, 호버, 액티브 색상을 정의)
+@mixin button-variant($bg, $hover-bg, $active-bg, $color) {
   background: var(#{$bg});
-  border-color: var(#{$border});
   color: #{$color};
 
   &:hover:not(:disabled) {
     background: var(#{$hover-bg});
-    border-color: var(#{$hover-border});
-    color: #{$hover-color};
+  }
+  
+  &:active:not(:disabled) {
+    background: var(#{$active-bg});
   }
 }

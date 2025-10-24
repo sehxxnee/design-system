@@ -2,41 +2,33 @@ import React, { forwardRef } from "react";
 import cn from "classnames";
 import styles from "./style.module.scss";
 
-/** 버튼 컬러 스킴 */
+/** 버튼 스타일 변형 */
 export enum ButtonType {
-  DEFAULT = "default",
-  PRIMARY = "primary",
-  SECONDARY = "secondary",
-  DANGER = "danger",
+  FILL = "fill",
+  OUTLINE = "outline", 
   GHOST = "ghost",
-  OUTLINE = "outline",
+  COLOR = "color"
 }
 
 type Size = "sm" | "md" | "lg";
-type Rounded = "sm" | "md" | "lg" | "pill";
+type Rounded = "sm" | "md" | "lg" | "pill"; 
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  /** 색상/스킴 */
-  theme?: ButtonType;
-  /** 크기 */
-  size?: Size;
-  /** 전체 너비 */
-  fullWidth?: boolean;
-  /** 로딩 상태 */
-  loading?: boolean;
-  /** 왼쪽 아이콘 */
-  leftIcon?: React.ReactNode;
-  /** 오른쪽 아이콘 */
-  rightIcon?: React.ReactNode;
-  /** 모서리 둥글기 */
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> { 
+  theme?: ButtonType; 
+  color?: "purple" | "blue" | "red" | "black";
+  size?: Size; 
+  fullWidth?: boolean; 
+  loading?: boolean; 
+  leftIcon?: React.ReactNode; 
+  rightIcon?: React.ReactNode; 
   rounded?: Rounded;
 }
-
-/** 디자인 시스템 공용 버튼 */
+ 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
   {
     children,
-    theme = ButtonType.PRIMARY,
+    theme = ButtonType.FILL,  
+    color = "purple",
     size = "md",
     fullWidth,
     loading,
@@ -44,16 +36,16 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     rightIcon,
     className,
     disabled,
-    rounded = "md",
+    rounded = "pill",  
     ...rest
   },
   ref
 ) {
   const cls = cn(
     styles.button,
-    styles[theme],                    // variant
-    styles[`size-${size}`],           // size
-    styles[`rounded-${rounded}`],     // radius
+    theme === ButtonType.COLOR ? styles[`${color}-fill`] : styles[theme],  // COLOR일 때는 color-fill, 아니면 theme
+    styles[`size-${size}`], 		// size
+    styles[`rounded-${rounded}`], // radius
     {
       [styles.fullWidth]: !!fullWidth,
       [styles.loading]: !!loading,
@@ -68,13 +60,20 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
       disabled={disabled || loading}
       aria-busy={!!loading}
       {...rest}
-    >
-      {leftIcon && <span className={styles.icon}>{leftIcon}</span>}
-      <span className={styles.label}>{children}</span>
-      {loading && <span className={styles.spinner} aria-hidden />}
-      {rightIcon && <span className={styles.icon}>{rightIcon}</span>}
+    > 
+      {loading ? (
+        <span className={styles.loadingContent}>
+          <span className={styles.spinner} aria-hidden />
+        </span>
+      ) : (
+        <>
+          {leftIcon && <span className={styles.icon}>{leftIcon}</span>}
+          <span className={styles.label}>{children}</span>
+          {rightIcon && <span className={styles.icon}>{rightIcon}</span>}
+        </>
+      )}
     </button>
   );
 });
 
-export default Button; 
+export default Button;

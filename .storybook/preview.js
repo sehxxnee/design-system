@@ -24,6 +24,11 @@ const preview = {
         { name: 'dark', value: '#333333' },
       ],
     },
+    // Docs 설정 추가
+    docs: {
+      autodocs: 'tag',
+      defaultName: 'Docs',
+    },
   },
   
   // 모든 스토리에 적용될 Decorators (예: Provider)를 여기에 설정합니다.

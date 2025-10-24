@@ -1,23 +1,45 @@
+/* 디자인 토큰 - _tokens.scss */
 :root {
+  /* 라운딩 및 간격 */
   --ds-radius-sm: 6px;
   --ds-radius-md: 10px;
   --ds-radius-lg: 14px;
   --ds-gap: 8px;
+  
+  /* 전역 기본 색상 (새 디자인) */
+  --ds-bg-default: #f3f0ff; 
+  --ds-fg-default: #4f369d; 
 
+  /* 기본 배경 및 전경 (기존 명칭 유지) */
   --ds-bg: #ffffff;
   --ds-fg: #111827;
   --ds-border: #e5e7eb;
 
-  --ds-primary: #2563eb; 			/* indigo-600 */
-  --ds-primary-700: #1d4ed8;
-  --ds-primary-100: #dbeafe;
+  /* Purple 스킴 - 연보라색 */
+  --ds-primary-500: #a144ff; 
+  --ds-primary-600: #9333ea;
+  --ds-primary-700: #7e22ce;
+  --ds-primary-50: #faf5ff;
+  --ds-primary-100: #f3e8ff; 
+  
+  /* Blue 스킴 - 모던한 파란색 */
+  --ds-blue-500: #3b82f6;
+  --ds-blue-600: #2563eb;
+  --ds-blue-700: #1d4ed8;
+  --ds-blue-50: #eff6ff;
 
-  --ds-secondary: #0ea5e9; 			/* sky-500 */
-  --ds-secondary-700: #0284c7;
-  --ds-secondary-100: #e0f2fe;
+  /* Red 스킴 - 모던한 빨간색 */
+  --ds-red-500: #f43f5e;
+  --ds-red-600: #e11d48;
+  --ds-red-700: #be123c;
+  --ds-red-50: #fef2f2;
 
-  --ds-danger: #ef4444; 			/* red-500 */
-  --ds-danger-700: #dc2626;
+  /* Black 스킴 - 세련된 블랙 */
+  --ds-black-500: #374151;
+  --ds-black-600: #1f2937;
+  --ds-black-700: #111827;
+  --ds-black-50: #f9fafb;
 
-  --ring: #60a5fa;
+  /* 포커스 링 */
+  --ring: var(--ds-primary-100); 
 }
