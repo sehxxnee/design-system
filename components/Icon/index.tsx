@@ -5,43 +5,18 @@ import styles from "./style.module.scss";
 export interface IconProps extends React.HTMLAttributes<HTMLSpanElement> {
   /** Type is the exact icon. You can find valid "type" values in the documentation example */
   type: string;
+  /** Will fill the icon when set to "true" */
+  isFilled?: boolean;
   /** Icon disabled state */
   disabled?: boolean;
   /** Additional className */
   className?: string;
 }
 
-// 아이콘 매핑 (예제용 - 실제로는 아이콘 폰트나 SVG 사용)
-const iconMap: Record<string, string> = {
-  'heart': '❤️',
-  'star': '⭐',
-  'check': '✓',
-  'close': '✕',
-  'arrow-left': '←',
-  'arrow-right': '→',
-  'arrow-up': '↑',
-  'arrow-down': '↓',
-  'plus': '+',
-  'minus': '−',
-  'search': '🔍',
-  'filter': '🔽',
-  'settings': '⚙️',
-  'user': '👤',
-  'home': '🏠',
-  'bell': '🔔',
-  'mail': '✉️',
-  'calendar': '📅',
-  'edit': '✏️',
-  'delete': '🗑️',
-  'download': '⬇️',
-  'upload': '⬆️',
-  'refresh': '🔄',
-  'lock': '🔒',
-};
-
 const Icon = forwardRef<HTMLSpanElement, IconProps>(function Icon(
   {
     type,
+    isFilled = false,
     disabled = false,
     className,
     ...rest
@@ -51,12 +26,15 @@ const Icon = forwardRef<HTMLSpanElement, IconProps>(function Icon(
   const cls = cn(
     styles.icon,
     {
+      [styles.filled]: isFilled,
+      [styles.outlined]: !isFilled,
       [styles.disabled]: disabled,
     },
     className
   );
 
-  const iconContent = iconMap[type] || '❓';
+  // isFilled가 false면 outlined 버전 사용
+  const iconName = !isFilled && !type.includes('_outlined') ? `${type}_outlined` : type;
 
   return (
     <span
@@ -66,7 +44,7 @@ const Icon = forwardRef<HTMLSpanElement, IconProps>(function Icon(
       aria-disabled={disabled}
       {...rest}
     >
-      {iconContent}
+      {iconName}
     </span>
   );
 });

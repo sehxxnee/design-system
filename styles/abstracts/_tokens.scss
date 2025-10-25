@@ -1,5 +1,8 @@
 /* 디자인 토큰 - _tokens.scss */
 :root {
+  /* 폰트 패밀리 */
+  --ds-font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  
   /* 라운딩 및 간격 */
   --ds-radius-sm: 6px;
   --ds-radius-md: 10px;

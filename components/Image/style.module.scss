@@ -1,0 +1,132 @@
+@import "../../styles/abstracts/tokens";
+@import "../../styles/abstracts/mixins";
+
+.imageContainer {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 8px;
+  background: transparent;
+  
+  &.withBorder {
+    .imageWrapper {
+      border: 1px solid var(--ds-border);
+      border-radius: var(--ds-radius-md);
+    }
+  }
+  
+  &.invalid {
+    .imageWrapper {
+      border-color: var(--ds-red-500);
+    }
+  }
+  
+  &.selectMode {
+    cursor: pointer;
+  }
+  
+  &.selected {
+    .imageWrapper {
+      border-color: var(--ds-primary-500);
+      box-shadow: 0 0 0 2px rgba(161, 68, 255, 0.2);
+    }
+  }
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ds-fg);
+  margin-bottom: 4px;
+  font-family: var(--ds-font-family);
+}
+
+.imageWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  min-height: 200px;
+  background: var(--ds-bg);
+  overflow: hidden;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    .actions {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 40px;
+  color: var(--ds-fg-subtle);
+}
+
+.emptyIcon {
+  font-size: 48px;
+  opacity: 0.5;
+}
+
+.emptyText {
+  font-size: 14px;
+  text-align: center;
+  font-family: var(--ds-font-family);
+}
+
+.selectOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 12px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  
+  .imageContainer.selectMode:hover &,
+  .imageContainer.selected & {
+    opacity: 1;
+  }
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--ds-primary-500);
+}
+
+.actions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.2s ease;
+}
+
