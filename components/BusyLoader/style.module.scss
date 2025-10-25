@@ -7,6 +7,7 @@
   justify-content: center;
   min-height: 100px;
   width: 100%;
+  background: transparent;
 }
 
 .loaderContainer {
@@ -14,44 +15,50 @@
   flex-direction: column;
   align-items: center;
   gap: 12px;
+  background: transparent;
+  width: 100%;
+  max-width: 400px;
 }
 
 .loadingText {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--ds-fg-subtle);
   font-weight: 500;
+  letter-spacing: 0.3px;
 }
 
-// Spinner styles
+// Spinner styles - 미니멀하고 세련된 단일 원
 .spinner {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: transparent;
 }
 
 .spinnerCircle {
   border-radius: 50%;
-  border: 3px solid var(--ds-bg-subtle);
-  border-top-color: var(--ds-primary-500);
+  border: 2px solid transparent;
+  border-top-color: currentColor;
   animation: spin 0.8s linear infinite;
+  background: transparent;
 }
 
-.small .spinnerCircle {
-  width: 24px;
-  height: 24px;
+.busyLoader.small .spinnerCircle {
+  width: 20px;
+  height: 20px;
   border-width: 2px;
 }
 
-.medium .spinnerCircle {
-  width: 40px;
-  height: 40px;
-  border-width: 3px;
+.busyLoader.medium .spinnerCircle {
+  width: 32px;
+  height: 32px;
+  border-width: 2.5px;
 }
 
-.big .spinnerCircle {
-  width: 56px;
-  height: 56px;
-  border-width: 4px;
+.busyLoader.big .spinnerCircle {
+  width: 44px;
+  height: 44px;
+  border-width: 3px;
 }
 
 @keyframes spin {
@@ -60,32 +67,33 @@
   }
 }
 
-// Bubbles styles
+// Bubbles styles - 미니멀한 점 3개
 .bubbles {
   display: flex;
   gap: 8px;
   align-items: center;
+  background: transparent;
 }
 
 .bubble {
   border-radius: 50%;
-  background: var(--ds-primary-500);
+  background: currentColor;
   animation: bubble 1.4s infinite ease-in-out both;
 }
 
-.small .bubble {
+.busyLoader.small .bubble {
+  width: 6px;
+  height: 6px;
+}
+
+.busyLoader.medium .bubble {
   width: 8px;
   height: 8px;
 }
 
-.medium .bubble {
-  width: 12px;
-  height: 12px;
-}
-
-.big .bubble {
-  width: 16px;
-  height: 16px;
+.busyLoader.big .bubble {
+  width: 10px;
+  height: 10px;
 }
 
 .bubble:nth-child(1) {
@@ -109,41 +117,33 @@
   }
 }
 
-// Bar styles
+// Bar styles - 깔끔한 프로그레스 바
 .bar {
   width: 100%;
-  max-width: 300px;
-  height: 4px;
-  background: var(--ds-bg-subtle);
-  border-radius: 2px;
+  height: 2px;
+  background: transparent;
+  border-radius: 0;
   overflow: hidden;
   position: relative;
 }
 
-.big .bar {
-  height: 6px;
-  max-width: 400px;
-}
-
-.medium .bar {
-  height: 5px;
-  max-width: 350px;
-}
-
-.small .bar {
+.busyLoader.big .bar {
   height: 3px;
-  max-width: 250px;
+}
+
+.busyLoader.medium .bar {
+  height: 2.5px;
+}
+
+.busyLoader.small .bar {
+  height: 2px;
 }
 
 .barProgress {
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    var(--ds-primary-500),
-    var(--ds-primary-600)
-  );
-  border-radius: 2px;
-  animation: barProgress 1.5s ease-in-out infinite;
+  background: currentColor;
+  border-radius: 0;
+  animation: barProgress ease-in-out infinite;
 }
 
 @keyframes barProgress {
@@ -161,3 +161,56 @@
   }
 }
 
+// Color variations
+.color-purple {
+  color: var(--ds-primary-500);
+}
+
+.color-blue {
+  color: var(--ds-blue-500);
+}
+
+.color-red {
+  color: var(--ds-red-500);
+}
+
+.color-black {
+  color: var(--ds-black-600);
+}
+
+// Speed variations
+.speed-slow .spinnerCircle {
+  animation-duration: 1.2s;
+}
+
+.speed-slow .bubble {
+  animation-duration: 2s;
+}
+
+.speed-slow .barProgress {
+  animation-duration: 2.2s;
+}
+
+.speed-normal .spinnerCircle {
+  animation-duration: 0.8s;
+}
+
+.speed-normal .bubble {
+  animation-duration: 1.4s;
+}
+
+.speed-normal .barProgress {
+  animation-duration: 1.5s;
+}
+
+.speed-fast .spinnerCircle {
+  animation-duration: 0.5s;
+}
+
+.speed-fast .bubble {
+  animation-duration: 0.9s;
+}
+
+.speed-fast .barProgress {
+  animation-duration: 1s;
+}

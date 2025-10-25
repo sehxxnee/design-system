@@ -17,45 +17,44 @@ const meta: Meta<typeof Icon> = {
       ),
     },
   },
+  argTypes: {
+    type: {
+      control: 'text',
+      description: 'Type is the exact icon. You can find valid "type" values in the documentation example',
+      table: {
+        category: 'Content',
+        defaultValue: { summary: '-' },
+      },
+    },
+    disabled: {
+      control: 'boolean',
+      description: 'Icon disabled state',
+      table: {
+        category: 'States',
+        defaultValue: { summary: 'false' },
+      },
+    },
+    className: {
+      control: 'text',
+      description: 'Additional className',
+      table: {
+        category: 'Others',
+      },
+    },
+  },
 };
 export default meta;
 
 type Story = StoryObj<typeof Icon>;
 
-// --- Icon Example ---
-export const IconExample: Story = {
-  render: () => (
-    <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-      <Icon type="heart" />
-      <Icon type="star" />
-      <Icon type="check" />
-      <Icon type="close" />
-    </div>
-  ),
+export const Default: Story = {
+  args: {
+    type: "heart",
+    disabled: false,
+  },
 };
 
-// --- Icon States ---
-export const IconStates: Story = {
-  render: () => (
-    <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-        <Icon type="heart" />
-        <span style={{ fontSize: '12px' }}>Normal</span>
-      </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-        <Icon type="heart" isFilled />
-        <span style={{ fontSize: '12px' }}>Filled</span>
-      </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-        <Icon type="heart" disabled />
-        <span style={{ fontSize: '12px' }}>Disabled</span>
-      </div>
-    </div>
-  ),
-};
-
-// --- Icon Catalog ---
-export const IconCatalog: Story = {
+export const Catalog: Story = {
   render: () => {
     const [searchValue, setSearchValue] = useState('');
     const [isLoading, setIsLoading] = useState(true);

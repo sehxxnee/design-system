@@ -4,11 +4,15 @@ import styles from "./style.module.scss";
 
 export type SpinnerSize = "small" | "medium" | "big";
 export type LoaderType = "spinner" | "bubbles" | "bar";
+export type LoaderColor = "purple" | "blue" | "red" | "black";
+export type LoaderSpeed = "slow" | "normal" | "fast";
 
 export interface BusyLoaderProps extends React.HTMLAttributes<HTMLDivElement> {
   isBusy?: boolean;
   spinnerSize?: SpinnerSize;
   type?: LoaderType;
+  color?: LoaderColor;
+  speed?: LoaderSpeed;
   children?: React.ReactNode;
   loadingText?: string;
   className?: string;
@@ -19,6 +23,8 @@ const BusyLoader = forwardRef<HTMLDivElement, BusyLoaderProps>(function BusyLoad
     isBusy = true,
     spinnerSize = "small",
     type = "spinner",
+    color = "purple",
+    speed = "normal",
     children,
     loadingText,
     className,
@@ -30,6 +36,8 @@ const BusyLoader = forwardRef<HTMLDivElement, BusyLoaderProps>(function BusyLoad
     styles.busyLoader,
     styles[type],
     styles[spinnerSize],
+    styles[`color-${color}`],
+    styles[`speed-${speed}`],
     className
   );
 
@@ -39,28 +47,34 @@ const BusyLoader = forwardRef<HTMLDivElement, BusyLoaderProps>(function BusyLoad
 
   return (
     <div ref={ref} className={loaderCls} {...rest}>
-      <div className={styles.loaderContainer}>
-        {type === "spinner" && (
-          <div className={styles.spinner}>
-            <div className={styles.spinnerCircle}></div>
-          </div>
-        )}
-        {type === "bubbles" && (
-          <div className={styles.bubbles}>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-          </div>
-        )}
-        {type === "bar" && (
+      {type === "bar" ? (
+        <div className={styles.loaderContainer}>
           <div className={styles.bar}>
             <div className={styles.barProgress}></div>
           </div>
-        )}
-        {loadingText && type !== "bar" && (
-          <div className={styles.loadingText}>{loadingText}</div>
-        )}
-      </div>
+          {loadingText && (
+            <div className={styles.loadingText}>{loadingText}</div>
+          )}
+        </div>
+      ) : (
+        <div className={styles.loaderContainer}>
+          {type === "spinner" && (
+            <div className={styles.spinner}>
+              <div className={styles.spinnerCircle}></div>
+            </div>
+          )}
+          {type === "bubbles" && (
+            <div className={styles.bubbles}>
+              <div className={styles.bubble}></div>
+              <div className={styles.bubble}></div>
+              <div className={styles.bubble}></div>
+            </div>
+          )}
+          {loadingText && (
+            <div className={styles.loadingText}>{loadingText}</div>
+          )}
+        </div>
+      )}
     </div>
   );
 });
