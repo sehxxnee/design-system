@@ -1,0 +1,163 @@
+@import "../../styles/abstracts/tokens";
+@import "../../styles/abstracts/mixins";
+
+.busyLoader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  width: 100%;
+}
+
+.loaderContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.loadingText {
+  font-size: 14px;
+  color: var(--ds-fg-subtle);
+  font-weight: 500;
+}
+
+// Spinner styles
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinnerCircle {
+  border-radius: 50%;
+  border: 3px solid var(--ds-bg-subtle);
+  border-top-color: var(--ds-primary-500);
+  animation: spin 0.8s linear infinite;
+}
+
+.small .spinnerCircle {
+  width: 24px;
+  height: 24px;
+  border-width: 2px;
+}
+
+.medium .spinnerCircle {
+  width: 40px;
+  height: 40px;
+  border-width: 3px;
+}
+
+.big .spinnerCircle {
+  width: 56px;
+  height: 56px;
+  border-width: 4px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Bubbles styles
+.bubbles {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.bubble {
+  border-radius: 50%;
+  background: var(--ds-primary-500);
+  animation: bubble 1.4s infinite ease-in-out both;
+}
+
+.small .bubble {
+  width: 8px;
+  height: 8px;
+}
+
+.medium .bubble {
+  width: 12px;
+  height: 12px;
+}
+
+.big .bubble {
+  width: 16px;
+  height: 16px;
+}
+
+.bubble:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.bubble:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes bubble {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// Bar styles
+.bar {
+  width: 100%;
+  max-width: 300px;
+  height: 4px;
+  background: var(--ds-bg-subtle);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.big .bar {
+  height: 6px;
+  max-width: 400px;
+}
+
+.medium .bar {
+  height: 5px;
+  max-width: 350px;
+}
+
+.small .bar {
+  height: 3px;
+  max-width: 250px;
+}
+
+.barProgress {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--ds-primary-500),
+    var(--ds-primary-600)
+  );
+  border-radius: 2px;
+  animation: barProgress 1.5s ease-in-out infinite;
+}
+
+@keyframes barProgress {
+  0% {
+    width: 0%;
+    margin-left: 0%;
+  }
+  50% {
+    width: 50%;
+    margin-left: 25%;
+  }
+  100% {
+    width: 0%;
+    margin-left: 100%;
+  }
+}
+
