@@ -5,8 +5,6 @@ import styles from "./style.module.scss";
 export interface IconProps extends React.HTMLAttributes<HTMLSpanElement> {
   /** Type is the exact icon. You can find valid "type" values in the documentation example */
   type: string;
-  /** Will fill the icon when set to "true" */
-  isFilled?: boolean;
   /** Icon disabled state */
   disabled?: boolean;
   /** Additional className */
@@ -16,7 +14,6 @@ export interface IconProps extends React.HTMLAttributes<HTMLSpanElement> {
 const Icon = forwardRef<HTMLSpanElement, IconProps>(function Icon(
   {
     type,
-    isFilled = false,
     disabled = false,
     className,
     ...rest
@@ -26,15 +23,10 @@ const Icon = forwardRef<HTMLSpanElement, IconProps>(function Icon(
   const cls = cn(
     styles.icon,
     {
-      [styles.filled]: isFilled,
-      [styles.outlined]: !isFilled,
       [styles.disabled]: disabled,
     },
     className
   );
-
-  // isFilled가 false면 outlined 버전 사용
-  const iconName = !isFilled && !type.includes('_outlined') ? `${type}_outlined` : type;
 
   return (
     <span
@@ -44,7 +36,7 @@ const Icon = forwardRef<HTMLSpanElement, IconProps>(function Icon(
       aria-disabled={disabled}
       {...rest}
     >
-      {iconName}
+      {type}
     </span>
   );
 });

@@ -22,14 +22,6 @@
   transition: all 0.2s ease;
   user-select: none;
   
-  &.filled {
-    font-family: 'Material Icons';
-  }
-  
-  &.outlined {
-    font-family: 'Material Icons Outlined';
-  }
-  
   &.disabled {
     opacity: 0.4;
     cursor: not-allowed;

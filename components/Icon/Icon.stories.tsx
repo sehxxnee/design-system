@@ -26,14 +26,6 @@ const meta: Meta<typeof Icon> = {
         defaultValue: { summary: '-' },
       },
     },
-    isFilled: {
-      control: 'boolean',
-      description: 'Will fill the icon when set to "true"',
-      table: {
-        category: 'Appearance',
-        defaultValue: { summary: 'false' },
-      },
-    },
     disabled: {
       control: 'boolean',
       description: 'Icon disabled state',
@@ -58,7 +50,6 @@ type Story = StoryObj<typeof Icon>;
 export const Default: Story = {
   args: {
     type: "favorite",
-    isFilled: false,
     disabled: false,
   },
 };
