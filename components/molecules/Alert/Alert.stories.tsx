@@ -1,8 +1,8 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Alert from "./index";
-import Icon from "../Icon";
-import Button from "../Button";
+import Icon from "../../atoms/Icon";
+import Button from "../../atoms/Button";
 
 const meta: Meta<typeof Alert> = {
   title: "Molecules/Feedback/Alert",

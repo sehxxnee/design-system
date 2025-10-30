@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Tooltip from "./index";
-import Button from "../Button";
-import Icon from "../Icon";
+import Button from "../../atoms/Button";
 import React from "react";
 import { ArgTypes, Stories } from '@storybook/blocks';
 

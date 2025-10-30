@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 import cn from "classnames";
 import styles from "./style.module.scss";
-import Icon, { IconProps } from "../Icon";
+import Icon, { IconProps } from "../../atoms/Icon";
 
 export type AlertType = "success" | "info" | "warning" | "error" | "note" | "message";
 export type AlertScreenType = "desktop" | "mobile";
