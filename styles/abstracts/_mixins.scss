@@ -1,22 +1,11 @@
-/* Mixins & Maps - _mixins.scss */
+/* Mixins & Utilities - _mixins.scss */
 
-// 크기별 속성 Map 정의
-$button-sizes: (
-  sm: (padding: 6px 14px, font-size: 12px),
-  md: (padding: 10px 18px, font-size: 14px),
-  lg: (padding: 14px 22px, font-size: 16px)
-);
+// 현재 모든 값들이 CSS 변수(_tokens.scss)로 관리되므로
+// 이 파일은 필요시 커스텀 믹스인을 추가하는 용도로 사용됩니다.
 
-// 단일 Fill 스타일 버튼을 위한 믹스인 (배경, 호버, 액티브 색상을 정의)
-@mixin button-variant($bg, $hover-bg, $active-bg, $color) {
-  background: var(#{$bg});
-  color: #{$color};
-
-  &:hover:not(:disabled) {
-    background: var(#{$hover-bg});
-  }
-  
-  &:active:not(:disabled) {
-    background: var(#{$active-bg});
-  }
-}
+// 예시: 반응형 디자인 믹스인 (필요시 사용)
+// @mixin respond-to($breakpoint) {
+//   @if $breakpoint == "mobile" {
+//     @media (max-width: 768px) { @content; }
+//   }
+// }

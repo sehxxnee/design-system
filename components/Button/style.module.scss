@@ -1,6 +1,6 @@
 /* 버튼 컴포넌트 스타일 - style.module.scss */
 
-@use '../../styles/index' as ds; 
+@import "../../styles/abstracts/tokens";
 
 
 // ====================================================================
@@ -8,39 +8,34 @@
 // ====================================================================
 
 .button {
-  // 더 세련된 그림자 값
-  --shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.12);
-  --shadow-active: 0 1px 4px rgba(0, 0, 0, 0.08);
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--ds-gap);
   
   border: none;
-  font-weight: 500;
+  font-weight: var(--ds-font-weight-medium);
   font-family: var(--ds-font-family);
   
   background: var(--ds-bg-default); 
   color: var(--ds-fg-default); 
   
-  line-height: 1;
+  line-height: var(--ds-line-height-tight);
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: var(--shadow);
+  transition: all var(--ds-transition-base);
+  box-shadow: var(--ds-button-shadow);
   user-select: none;
   position: relative;
   
   // 더 부드러운 호버 효과
   &:hover:not(:disabled) {
     transform: translateY(-1px);
-    box-shadow: var(--shadow-hover);
+    box-shadow: var(--ds-button-shadow-hover);
   }
   
   &:active:not(:disabled) {
     transform: translateY(0);
-    box-shadow: var(--shadow-active);
+    box-shadow: var(--ds-button-shadow-active);
   }
 }
 
@@ -48,11 +43,11 @@
 // 포커스 링
 .button:focus-visible {
   outline: none; 
-  box-shadow: 0 0 0 4px var(--ring), var(--shadow); 
+  box-shadow: 0 0 0 var(--ds-ring-width) var(--ds-ring), var(--ds-button-shadow); 
 }
 
 .button:disabled {
-  opacity: .5;
+  opacity: var(--ds-opacity-disabled);
   cursor: not-allowed;
   box-shadow: none;
 }
@@ -61,19 +56,27 @@
 // 크기 & 라운드
 // ====================================================================
 
-// 크기: SCSS Map & @each 사용
-@each $key, $val in ds.$button-sizes {
-  .size-#{$key} {
-    padding: map-get($val, padding);
-    font-size: map-get($val, font-size);
-  }
+// 크기
+.size-sm {
+  padding: var(--ds-button-padding-sm);
+  font-size: var(--ds-button-font-size-sm);
+}
+
+.size-md {
+  padding: var(--ds-button-padding-md);
+  font-size: var(--ds-button-font-size-md);
+}
+
+.size-lg {
+  padding: var(--ds-button-padding-lg);
+  font-size: var(--ds-button-font-size-lg);
 }
 
 // 라운딩 정의
 .rounded-sm { border-radius: var(--ds-radius-sm); }
 .rounded-md { border-radius: var(--ds-radius-md); }
 .rounded-lg { border-radius: var(--ds-radius-lg); }
-.rounded-pill { border-radius: 9999px; } 
+.rounded-pill { border-radius: var(--ds-radius-full); } 
 
 
 // ====================================================================
@@ -83,7 +86,7 @@
 .icon { 
   display: inline-flex; 
   font-size: 1.2em;
-  line-height: 1;
+  line-height: var(--ds-line-height-tight);
 }
 .label { display: inline-block; }
 
@@ -94,7 +97,7 @@
 .spinner {
   width: 1em;
   height: 1em;
-  border-radius: 9999px;
+  border-radius: var(--ds-radius-circle);
   border: 2px solid rgba(255,255,255,.6);
   border-top-color: rgba(255,255,255,1);
   animation: spin .8s linear infinite;
@@ -115,17 +118,17 @@
 // Fill 스타일 (기본)
 .fill {
   background: linear-gradient(135deg, var(--ds-primary-500), var(--ds-primary-600));
-  color: #fff;
+  color: var(--ds-color-white);
   border: none;
   
   &:hover:not(:disabled) {
     background: linear-gradient(135deg, var(--ds-primary-600), var(--ds-primary-700));
-    color: #fff;
+    color: var(--ds-color-white);
   }
   
   &:active:not(:disabled) {
     background: var(--ds-primary-700);
-    color: #fff;
+    color: var(--ds-color-white);
   }
 }
 
@@ -138,7 +141,7 @@
   
   &:hover:not(:disabled) {
     background: var(--ds-primary-500);
-    color: #fff;
+    color: var(--ds-color-white);
     border-color: var(--ds-primary-500);
   }
   
@@ -168,16 +171,16 @@
 // Color 스타일 (색상별)
 .purple-fill {
   background: linear-gradient(135deg, var(--ds-primary-500), var(--ds-primary-600));
-  color: #fff;
+  color: var(--ds-color-white);
   
   &:hover:not(:disabled) {
     background: linear-gradient(135deg, var(--ds-primary-600), var(--ds-primary-700));
-    color: #fff;
+    color: var(--ds-color-white);
   }
   
   &:active:not(:disabled) {
     background: var(--ds-primary-700);
-    color: #fff;
+    color: var(--ds-color-white);
   }
 }
 
@@ -188,7 +191,7 @@
   
   &:hover:not(:disabled) {
     background: var(--ds-primary-500);
-    color: #fff;
+    color: var(--ds-color-white);
   }
 }
 
@@ -204,16 +207,16 @@
 
 .blue-fill {
   background: linear-gradient(135deg, var(--ds-blue-500), var(--ds-blue-600));
-  color: #fff;
+  color: var(--ds-color-white);
   
   &:hover:not(:disabled) {
     background: linear-gradient(135deg, var(--ds-blue-600), var(--ds-blue-700));
-    color: #fff;
+    color: var(--ds-color-white);
   }
   
   &:active:not(:disabled) {
     background: var(--ds-blue-700);
-    color: #fff;
+    color: var(--ds-color-white);
   }
 }
 
@@ -224,7 +227,7 @@
   
   &:hover:not(:disabled) {
     background: var(--ds-blue-500);
-    color: #fff;
+    color: var(--ds-color-white);
   }
 }
 
@@ -240,16 +243,16 @@
 
 .red-fill {
   background: linear-gradient(135deg, var(--ds-red-500), var(--ds-red-600));
-  color: #fff;
+  color: var(--ds-color-white);
   
   &:hover:not(:disabled) {
     background: linear-gradient(135deg, var(--ds-red-600), var(--ds-red-700));
-    color: #fff;
+    color: var(--ds-color-white);
   }
   
   &:active:not(:disabled) {
     background: var(--ds-red-700);
-    color: #fff;
+    color: var(--ds-color-white);
   }
 }
 
@@ -260,7 +263,7 @@
   
   &:hover:not(:disabled) {
     background: var(--ds-red-500);
-    color: #fff;
+    color: var(--ds-color-white);
   }
 }
 
@@ -276,16 +279,16 @@
 
 .black-fill {
   background: linear-gradient(135deg, var(--ds-black-500), var(--ds-black-600));
-  color: #fff;
+  color: var(--ds-color-white);
   
   &:hover:not(:disabled) {
     background: linear-gradient(135deg, var(--ds-black-600), var(--ds-black-700));
-    color: #fff;
+    color: var(--ds-color-white);
   }
   
   &:active:not(:disabled) {
     background: var(--ds-black-700);
-    color: #fff;
+    color: var(--ds-color-white);
   }
 }
 
@@ -296,7 +299,7 @@
   
   &:hover:not(:disabled) {
     background: var(--ds-black-500);
-    color: #fff;
+    color: var(--ds-color-white);
     border-color: var(--ds-black-500);
   }
   

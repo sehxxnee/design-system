@@ -10,16 +10,16 @@
   background-color: var(--ds-bg-subtle);
   color: var(--ds-fg);
   font-family: var(--ds-font-family);
-  font-weight: 600;
+  font-weight: var(--ds-font-weight-semibold);
   user-select: none;
-  transition: all 0.2s ease;
+  transition: all var(--ds-transition-base);
   
   &.clickable {
     cursor: pointer;
     
     &:hover {
       transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      box-shadow: var(--ds-shadow-md);
     }
     
     &:active {
@@ -30,7 +30,7 @@
 
 // Shapes
 .shape-circle {
-  border-radius: 50%;
+  border-radius: var(--ds-radius-circle);
 }
 
 .shape-square {
@@ -39,32 +39,32 @@
 
 // Sizes
 .size-small {
-  width: 32px;
-  height: 32px;
-  font-size: 12px;
+  width: var(--ds-avatar-size-sm);
+  height: var(--ds-avatar-size-sm);
+  font-size: var(--ds-avatar-font-size-sm);
   
   .icon {
-    font-size: 18px;
+    font-size: var(--ds-avatar-icon-size-sm);
   }
 }
 
 .size-default {
-  width: 48px;
-  height: 48px;
-  font-size: 16px;
+  width: var(--ds-avatar-size-md);
+  height: var(--ds-avatar-size-md);
+  font-size: var(--ds-avatar-font-size-md);
   
   .icon {
-    font-size: 24px;
+    font-size: var(--ds-avatar-icon-size-md);
   }
 }
 
 .size-large {
-  width: 64px;
-  height: 64px;
-  font-size: 20px;
+  width: var(--ds-avatar-size-lg);
+  height: var(--ds-avatar-size-lg);
+  font-size: var(--ds-avatar-font-size-lg);
   
   .icon {
-    font-size: 32px;
+    font-size: var(--ds-avatar-icon-size-lg);
   }
 }
 
@@ -76,22 +76,22 @@
 
 .color-purple {
   background: linear-gradient(135deg, var(--ds-primary-500), var(--ds-primary-600));
-  color: #fff;
+  color: var(--ds-color-white);
 }
 
 .color-blue {
   background: linear-gradient(135deg, var(--ds-blue-500), var(--ds-blue-600));
-  color: #fff;
+  color: var(--ds-color-white);
 }
 
 .color-red {
   background: linear-gradient(135deg, var(--ds-red-500), var(--ds-red-600));
-  color: #fff;
+  color: var(--ds-color-white);
 }
 
 .color-black {
   background: linear-gradient(135deg, var(--ds-black-500), var(--ds-black-600));
-  color: #fff;
+  color: var(--ds-color-white);
 }
 
 // Content
@@ -110,7 +110,7 @@
 
 .initials {
   display: inline-block;
-  line-height: 1;
+  line-height: var(--ds-line-height-tight);
   text-align: center;
 }
 

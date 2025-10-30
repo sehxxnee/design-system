@@ -5,8 +5,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
-  line-height: 1;
+  font-size: var(--ds-icon-size-md);
+  line-height: var(--ds-line-height-tight);
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
@@ -19,11 +19,11 @@
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: 'liga';
-  transition: all 0.2s ease;
+  transition: all var(--ds-transition-base);
   user-select: none;
   
   &.disabled {
-    opacity: 0.4;
+    opacity: var(--ds-opacity-disabled);
     cursor: not-allowed;
     pointer-events: none;
     filter: grayscale(100%);

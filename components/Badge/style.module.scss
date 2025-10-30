@@ -19,25 +19,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 20px;
-  height: 20px;
-  padding: 0 6px;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1;
-  color: #fff;
-  border-radius: 10px;
+  min-width: var(--ds-badge-size-default);
+  height: var(--ds-badge-size-default);
+  padding: var(--ds-badge-padding-default);
+  font-size: var(--ds-badge-font-size-default);
+  font-weight: var(--ds-font-weight-semibold);
+  line-height: var(--ds-line-height-tight);
+  color: var(--ds-color-white);
+  border-radius: calc(var(--ds-badge-size-default) / 2);
   white-space: nowrap;
   font-family: var(--ds-font-family);
-  box-shadow: 0 0 0 2px #fff;
+  box-shadow: 0 0 0 2px var(--ds-color-white);
   z-index: 1;
   
   &.dot {
-    min-width: 8px;
-    width: 8px;
-    height: 8px;
+    min-width: var(--ds-badge-dot-size-default);
+    width: var(--ds-badge-dot-size-default);
+    height: var(--ds-badge-dot-size-default);
     padding: 0;
-    border-radius: 50%;
+    border-radius: var(--ds-radius-circle);
   }
   
   // When badge is used without children (standalone)
@@ -61,53 +61,53 @@
 
 // Sizes
 .size-default {
-  min-width: 20px;
-  height: 20px;
-  padding: 0 6px;
-  font-size: 12px;
+  min-width: var(--ds-badge-size-default);
+  height: var(--ds-badge-size-default);
+  padding: var(--ds-badge-padding-default);
+  font-size: var(--ds-badge-font-size-default);
   
   &.dot {
-    width: 8px;
-    height: 8px;
+    width: var(--ds-badge-dot-size-default);
+    height: var(--ds-badge-dot-size-default);
   }
 }
 
 .size-medium {
-  min-width: 24px;
-  height: 24px;
-  padding: 0 8px;
-  font-size: 13px;
-  border-radius: 12px;
+  min-width: var(--ds-badge-size-md);
+  height: var(--ds-badge-size-md);
+  padding: var(--ds-badge-padding-md);
+  font-size: var(--ds-badge-font-size-md);
+  border-radius: calc(var(--ds-badge-size-md) / 2);
   
   &.dot {
-    width: 10px;
-    height: 10px;
+    width: var(--ds-badge-dot-size-md);
+    height: var(--ds-badge-dot-size-md);
   }
 }
 
 .size-big {
-  min-width: 28px;
-  height: 28px;
-  padding: 0 10px;
-  font-size: 14px;
-  border-radius: 14px;
+  min-width: var(--ds-badge-size-big);
+  height: var(--ds-badge-size-big);
+  padding: var(--ds-badge-padding-big);
+  font-size: var(--ds-badge-font-size-big);
+  border-radius: calc(var(--ds-badge-size-big) / 2);
   
   &.dot {
-    width: 12px;
-    height: 12px;
+    width: var(--ds-badge-dot-size-big);
+    height: var(--ds-badge-dot-size-big);
   }
 }
 
 .size-huge {
-  min-width: 32px;
-  height: 32px;
-  padding: 0 12px;
-  font-size: 16px;
-  border-radius: 16px;
+  min-width: var(--ds-badge-size-huge);
+  height: var(--ds-badge-size-huge);
+  padding: var(--ds-badge-padding-huge);
+  font-size: var(--ds-badge-font-size-huge);
+  border-radius: calc(var(--ds-badge-size-huge) / 2);
   
   &.dot {
-    width: 14px;
-    height: 14px;
+    width: var(--ds-badge-dot-size-huge);
+    height: var(--ds-badge-dot-size-huge);
   }
 }
 
