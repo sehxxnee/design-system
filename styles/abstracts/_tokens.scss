@@ -101,6 +101,18 @@
   --ds-icon-size-lg: 32px;
   --ds-icon-size-xl: 48px;
   
+  /* Radio sizes */
+  --ds-radio-size-sm: 16px;
+  --ds-radio-size-md: 20px;
+  --ds-radio-size-lg: 24px;
+  --ds-radio-dot-size-sm: 8px;
+  --ds-radio-dot-size-md: 10px;
+  --ds-radio-dot-size-lg: 12px;
+  --ds-radio-gap-sm: var(--ds-spacing-2);
+  --ds-radio-gap-md: var(--ds-spacing-3);
+  --ds-radio-gap-lg: var(--ds-spacing-4);
+  --ds-radio-tab-padding: var(--ds-spacing-5) var(--ds-spacing-7);
+  
   /* ========================================
      Colors - Base
      ======================================== */
