@@ -136,7 +136,7 @@
 .outline {
   background: transparent;
   color: var(--ds-primary-500);
-  border: 1.5px solid var(--ds-primary-500);
+  border: 1px solid var(--ds-primary-500);
   backdrop-filter: blur(10px);
   
   &:hover:not(:disabled) {
@@ -187,7 +187,7 @@
 .purple-outline {
   background: transparent;
   color: var(--ds-primary-500);
-  border: 2px solid var(--ds-primary-500);
+  border: 1px solid var(--ds-primary-500);
   
   &:hover:not(:disabled) {
     background: var(--ds-primary-500);
@@ -223,7 +223,7 @@
 .blue-outline {
   background: transparent;
   color: var(--ds-blue-500);
-  border: 2px solid var(--ds-blue-500);
+  border: 1px solid var(--ds-blue-500);
   
   &:hover:not(:disabled) {
     background: var(--ds-blue-500);
@@ -259,7 +259,7 @@
 .red-outline {
   background: transparent;
   color: var(--ds-red-500);
-  border: 2px solid var(--ds-red-500);
+  border: 1px solid var(--ds-red-500);
   
   &:hover:not(:disabled) {
     background: var(--ds-red-500);
@@ -343,7 +343,7 @@
 .yellow-outline {
   background: transparent;
   color: var(--ds-yellow-600);
-  border: 2px solid var(--ds-yellow-500);
+  border: 1px solid var(--ds-yellow-500);
   
   &:hover:not(:disabled) {
     background: var(--ds-yellow-500);
