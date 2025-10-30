@@ -132,6 +132,46 @@
   --ds-tooltip-bg: #1f2937;
   --ds-tooltip-color: var(--ds-color-white);
   
+  /* Alert */
+  --ds-alert-padding: var(--ds-spacing-7);
+  --ds-alert-padding-mobile: var(--ds-spacing-5);
+  --ds-alert-border-radius: var(--ds-radius-lg);
+  --ds-alert-gap: var(--ds-spacing-5);
+  --ds-alert-icon-size: var(--ds-icon-size-lg);
+  --ds-alert-title-font-size: var(--ds-font-size-base);
+  --ds-alert-message-font-size: var(--ds-font-size-sm);
+  
+  /* Alert Colors */
+  --ds-alert-success-bg: var(--ds-green-50);
+  --ds-alert-success-border: #86efac;
+  --ds-alert-success-color: var(--ds-green-700);
+  --ds-alert-success-icon: var(--ds-green-500);
+  
+  --ds-alert-info-bg: var(--ds-blue-50);
+  --ds-alert-info-border: #93c5fd;
+  --ds-alert-info-color: var(--ds-blue-700);
+  --ds-alert-info-icon: var(--ds-blue-500);
+  
+  --ds-alert-warning-bg: var(--ds-yellow-50);
+  --ds-alert-warning-border: #fcd34d;
+  --ds-alert-warning-color: var(--ds-yellow-700);
+  --ds-alert-warning-icon: var(--ds-yellow-500);
+  
+  --ds-alert-error-bg: var(--ds-red-50);
+  --ds-alert-error-border: #fca5a5;
+  --ds-alert-error-color: var(--ds-red-700);
+  --ds-alert-error-icon: var(--ds-red-500);
+  
+  --ds-alert-note-bg: #f5f3ff;
+  --ds-alert-note-border: #c4b5fd;
+  --ds-alert-note-color: #5b21b6;
+  --ds-alert-note-icon: var(--ds-primary-500);
+  
+  --ds-alert-message-bg: var(--ds-black-50);
+  --ds-alert-message-border: #d1d5db;
+  --ds-alert-message-color: var(--ds-black-500);
+  --ds-alert-message-icon: #6b7280;
+  
   /* ========================================
      Colors - Base
      ======================================== */
@@ -176,6 +216,18 @@
   --ds-black-600: #1f2937;
   --ds-black-700: #111827;
   --ds-black-50: #f9fafb;
+
+  /* Yellow/Orange 스킴 */
+  --ds-yellow-500: #f59e0b;
+  --ds-yellow-600: #d97706;
+  --ds-yellow-700: #b45309;
+  --ds-yellow-50: #fffbeb;
+
+  /* Green 스킴 */
+  --ds-green-500: #22c55e;
+  --ds-green-600: #16a34a;
+  --ds-green-700: #15803d;
+  --ds-green-50: #f0fdf4;
 
   /* ========================================
      Effects

@@ -38,6 +38,12 @@ export { default as Title } from "./components/Title";
 export type { TitleProps, TitleColor } from "./components/Title";
 
 // ========================================
+// Molecules - Feedback
+// ========================================
+export { default as Alert } from "./components/Alert";
+export type { AlertProps, AlertType, AlertScreenType } from "./components/Alert";
+
+// ========================================
 // Molecules - Overlays
 // ========================================
 export { default as Tooltip } from "./components/Tooltip";

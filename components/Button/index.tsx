@@ -15,7 +15,7 @@ type Rounded = "sm" | "md" | "lg" | "pill";
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> { 
   theme?: ButtonType; 
-  color?: "purple" | "blue" | "red" | "black";
+  color?: "purple" | "blue" | "red" | "black" | "yellow";
   size?: Size; 
   fullWidth?: boolean; 
   loading?: boolean; 
@@ -43,7 +43,14 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
 ) {
   const cls = cn(
     styles.button,
-    theme === ButtonType.COLOR ? styles[`${color}-fill`] : styles[theme],  // COLOR일 때는 color-fill, 아니면 theme
+    // theme에 따라 color 적용
+    theme === ButtonType.COLOR 
+      ? styles[`${color}-fill`] 
+      : theme === ButtonType.OUTLINE 
+        ? styles[`${color}-outline`]
+        : theme === ButtonType.GHOST
+          ? styles[`${color}-ghost`]
+          : styles[theme],
     styles[`size-${size}`], 		// size
     styles[`rounded-${rounded}`], // radius
     {

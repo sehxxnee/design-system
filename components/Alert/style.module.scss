@@ -1,0 +1,118 @@
+@import "../../styles/abstracts/tokens";
+@import "../../styles/abstracts/mixins";
+
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ds-alert-gap);
+  padding: var(--ds-alert-padding);
+  border-radius: var(--ds-alert-border-radius);
+  border: 1px solid;
+  font-family: var(--ds-font-family);
+  transition: all var(--ds-transition-base);
+
+  // Desktop by default
+  &:not(.screen-mobile) {
+    padding: var(--ds-alert-padding);
+  }
+
+  // Mobile
+  &.screen-mobile {
+    padding: var(--ds-alert-padding-mobile);
+    gap: var(--ds-spacing-3);
+  }
+}
+
+.alertIcon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--ds-alert-icon-size);
+  line-height: var(--ds-line-height-tight);
+}
+
+.alertContent {
+  flex: 1;
+  min-width: 0; // Allow text to truncate
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-spacing-2);
+}
+
+.alertTitle {
+  font-size: var(--ds-alert-title-font-size);
+  font-weight: var(--ds-font-weight-semibold);
+  line-height: var(--ds-line-height-normal);
+  word-break: break-word;
+}
+
+.alertMessage {
+  font-size: var(--ds-alert-message-font-size);
+  font-weight: var(--ds-font-weight-normal);
+  line-height: var(--ds-line-height-relaxed);
+  opacity: var(--ds-opacity-subtle);
+  word-break: break-word;
+}
+
+// Alert Type Colors
+.type-success {
+  background-color: var(--ds-alert-success-bg);
+  border-color: var(--ds-alert-success-border);
+  color: var(--ds-alert-success-color);
+
+  .alertIcon {
+    color: var(--ds-alert-success-icon);
+  }
+}
+
+.type-info {
+  background-color: var(--ds-alert-info-bg);
+  border-color: var(--ds-alert-info-border);
+  color: var(--ds-alert-info-color);
+
+  .alertIcon {
+    color: var(--ds-alert-info-icon);
+  }
+}
+
+.type-warning {
+  background-color: var(--ds-alert-warning-bg);
+  border-color: var(--ds-alert-warning-border);
+  color: var(--ds-alert-warning-color);
+
+  .alertIcon {
+    color: var(--ds-alert-warning-icon);
+  }
+}
+
+.type-error {
+  background-color: var(--ds-alert-error-bg);
+  border-color: var(--ds-alert-error-border);
+  color: var(--ds-alert-error-color);
+
+  .alertIcon {
+    color: var(--ds-alert-error-icon);
+  }
+}
+
+.type-note {
+  background-color: var(--ds-alert-note-bg);
+  border-color: var(--ds-alert-note-border);
+  color: var(--ds-alert-note-color);
+
+  .alertIcon {
+    color: var(--ds-alert-note-icon);
+  }
+}
+
+.type-message {
+  background-color: var(--ds-alert-message-bg);
+  border-color: var(--ds-alert-message-border);
+  color: var(--ds-alert-message-color);
+
+  .alertIcon {
+    color: var(--ds-alert-message-icon);
+  }
+}
+

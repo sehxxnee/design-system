@@ -324,3 +324,39 @@
     color: var(--ds-black-700);
   }
 }
+
+.yellow-fill {
+  background: linear-gradient(135deg, var(--ds-yellow-500), var(--ds-yellow-600));
+  color: var(--ds-color-white);
+  
+  &:hover:not(:disabled) {
+    background: linear-gradient(135deg, var(--ds-yellow-600), var(--ds-yellow-700));
+    color: var(--ds-color-white);
+  }
+  
+  &:active:not(:disabled) {
+    background: var(--ds-yellow-700);
+    color: var(--ds-color-white);
+  }
+}
+
+.yellow-outline {
+  background: transparent;
+  color: var(--ds-yellow-600);
+  border: 2px solid var(--ds-yellow-500);
+  
+  &:hover:not(:disabled) {
+    background: var(--ds-yellow-500);
+    color: var(--ds-color-white);
+  }
+}
+
+.yellow-ghost {
+  background: transparent;
+  color: var(--ds-yellow-600);
+  border: none;
+  
+  &:hover:not(:disabled) {
+    background: var(--ds-yellow-50);
+  }
+}
