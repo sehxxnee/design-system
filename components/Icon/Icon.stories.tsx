@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { ArgTypes, Stories } from '@storybook/blocks';
 
 const meta: Meta<typeof Icon> = {
-  title: "Atoms/Icons",
+  title: "Atoms/Display/Icon",
   component: Icon,
   tags: ["autodocs"],
   parameters: {

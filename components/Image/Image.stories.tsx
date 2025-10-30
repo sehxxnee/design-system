@@ -5,7 +5,7 @@ import { ArgTypes, Stories } from '@storybook/blocks';
 import Button, { ButtonType } from "../Button";
 
 const meta: Meta<typeof Image> = {
-  title: "Atoms/Image",
+  title: "Atoms/Display/Image",
   component: Image,
   tags: ["autodocs"],
   parameters: {

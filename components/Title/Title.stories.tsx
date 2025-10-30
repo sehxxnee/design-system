@@ -6,7 +6,7 @@ import React from "react";
 import { ArgTypes, Stories } from '@storybook/blocks';
 
 const meta: Meta<typeof Title> = {
-  title: "Atoms/Title",
+  title: "Atoms/Layout/Title",
   component: Title,
   tags: ["autodocs"],
   parameters: {

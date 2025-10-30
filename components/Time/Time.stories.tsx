@@ -4,7 +4,7 @@ import React from "react";
 import { ArgTypes, Stories } from '@storybook/blocks';
 
 const meta: Meta<typeof Time> = {
-  title: "Atoms/Time",
+  title: "Atoms/Display/Time",
   component: Time,
   tags: ["autodocs"],
   parameters: {

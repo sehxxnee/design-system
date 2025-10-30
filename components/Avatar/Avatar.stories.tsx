@@ -4,7 +4,7 @@ import React from "react";
 import { ArgTypes, Stories } from '@storybook/blocks';
 
 const meta: Meta<typeof Avatar> = {
-  title: "Atoms/Avatar",
+  title: "Atoms/Display/Avatar",
   component: Avatar,
   tags: ["autodocs"],
   parameters: {

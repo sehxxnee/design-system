@@ -5,7 +5,7 @@ import React from "react";
 import { ArgTypes, Stories } from '@storybook/blocks';
 
 const meta: Meta<typeof Badge> = {
-  title: "Atoms/Badge",
+  title: "Atoms/Display/Badge",
   component: Badge,
   tags: ["autodocs"],
   parameters: {

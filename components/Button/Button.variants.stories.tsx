@@ -4,7 +4,7 @@ import React from "react";
 import { ArgTypes, Stories } from '@storybook/blocks';
 
 const meta: Meta<typeof Button> = {
-  title: "Atoms/Button",
+  title: "Atoms/Form/Button",
   component: Button,
   tags: ["autodocs"],
   parameters: {

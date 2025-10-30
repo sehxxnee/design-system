@@ -4,7 +4,7 @@ import React from "react";
 import { ArgTypes, Stories } from '@storybook/blocks';
 
 const meta: Meta<typeof BusyLoader> = {
-  title: "Atoms/BusyLoader",
+  title: "Atoms/Feedback/BusyLoader",
   component: BusyLoader,
   tags: ["autodocs"],
   parameters: {

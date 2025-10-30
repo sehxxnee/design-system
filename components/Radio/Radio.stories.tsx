@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { ArgTypes, Stories } from '@storybook/blocks';
 
 const meta: Meta<typeof Radio> = {
-  title: "Atoms/Radio",
+  title: "Atoms/Form/Radio",
   component: Radio,
   tags: ["autodocs"],
   parameters: {

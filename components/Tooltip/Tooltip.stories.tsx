@@ -6,7 +6,7 @@ import React from "react";
 import { ArgTypes, Stories } from '@storybook/blocks';
 
 const meta: Meta<typeof Tooltip> = {
-  title: "Molecules/Tooltip",
+  title: "Molecules/Overlays/Tooltip",
   component: Tooltip,
   tags: ["autodocs"],
   parameters: {
