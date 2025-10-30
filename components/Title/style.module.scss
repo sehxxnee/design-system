@@ -1,0 +1,100 @@
+@import "../../styles/abstracts/tokens";
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--ds-font-family);
+}
+
+.titleHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ds-title-gap);
+}
+
+.titleContent {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-spacing-3);
+  flex: 1;
+  min-width: 0;
+}
+
+.titleIcon {
+  flex-shrink: 0;
+  font-size: var(--ds-font-size-2xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titleText {
+  font-size: var(--ds-title-font-size);
+  font-weight: var(--ds-title-font-weight);
+  line-height: var(--ds-title-line-height);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.titleActions {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-spacing-3);
+  flex-shrink: 0;
+}
+
+.titleDivider {
+  width: 100%;
+  height: var(--ds-title-divider-height);
+  background-color: var(--ds-border);
+  margin: var(--ds-title-divider-margin);
+}
+
+// ========================================
+// Colors
+// ========================================
+
+.color-base {
+  .titleText {
+    color: var(--ds-fg);
+  }
+  
+  .titleIcon {
+    color: var(--ds-fg);
+  }
+}
+
+.color-primary {
+  .titleText {
+    color: var(--ds-primary-500);
+  }
+  
+  .titleIcon {
+    color: var(--ds-primary-500);
+  }
+}
+
+.color-subtle {
+  .titleText {
+    color: var(--ds-fg-subtle);
+  }
+  
+  .titleIcon {
+    color: var(--ds-fg-subtle);
+  }
+}
+
+.color-danger {
+  .titleText {
+    color: var(--ds-red-500);
+  }
+  
+  .titleIcon {
+    color: var(--ds-red-500);
+  }
+}
+
