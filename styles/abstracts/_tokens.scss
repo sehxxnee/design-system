@@ -121,6 +121,17 @@
   --ds-title-divider-height: 1px;
   --ds-title-divider-margin: var(--ds-spacing-5) 0;
   
+  /* Tooltip */
+  --ds-tooltip-padding-default: var(--ds-spacing-3) var(--ds-spacing-5);
+  --ds-tooltip-padding-small: var(--ds-spacing-2) var(--ds-spacing-3);
+  --ds-tooltip-font-size-default: var(--ds-font-size-sm);
+  --ds-tooltip-font-size-small: var(--ds-font-size-xs);
+  --ds-tooltip-max-width: 250px;
+  --ds-tooltip-arrow-size: 6px;
+  --ds-tooltip-z-index: 1000;
+  --ds-tooltip-bg: #1f2937;
+  --ds-tooltip-color: var(--ds-color-white);
+  
   /* ========================================
      Colors - Base
      ======================================== */

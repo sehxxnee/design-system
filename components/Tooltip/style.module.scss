@@ -1,0 +1,160 @@
+@import "../../styles/abstracts/tokens";
+
+.tooltipContainer {
+  position: relative;
+  display: inline-block;
+  font-family: var(--ds-font-family);
+}
+
+.tooltipTrigger {
+  display: inline-block;
+}
+
+.tooltip {
+  position: absolute;
+  z-index: var(--ds-tooltip-z-index);
+  background-color: var(--ds-tooltip-bg);
+  color: var(--ds-tooltip-color);
+  border-radius: var(--ds-radius-md);
+  box-shadow: var(--ds-shadow-lg);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--ds-transition-base), visibility var(--ds-transition-base);
+  max-width: var(--ds-tooltip-max-width);
+  word-wrap: break-word;
+  
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  &.alwaysShow {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.tooltipContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-spacing-1);
+}
+
+.tooltipTitle {
+  font-size: var(--ds-font-size-sm);
+  font-weight: var(--ds-font-weight-semibold);
+  line-height: var(--ds-line-height-normal);
+}
+
+.tooltipText {
+  font-size: var(--ds-font-size-sm);
+  font-weight: var(--ds-font-weight-normal);
+  line-height: var(--ds-line-height-relaxed);
+}
+
+.tooltipArrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+// ========================================
+// Sizes
+// ========================================
+
+.size-default {
+  padding: var(--ds-tooltip-padding-default);
+  
+  .tooltipTitle {
+    font-size: var(--ds-tooltip-font-size-default);
+  }
+  
+  .tooltipText {
+    font-size: var(--ds-tooltip-font-size-default);
+  }
+}
+
+.size-small {
+  padding: var(--ds-tooltip-padding-small);
+  
+  .tooltipTitle {
+    font-size: var(--ds-tooltip-font-size-small);
+  }
+  
+  .tooltipText {
+    font-size: var(--ds-tooltip-font-size-small);
+  }
+}
+
+// ========================================
+// Positions
+// ========================================
+
+.position-top {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  
+  .tooltipArrow {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: var(--ds-tooltip-arrow-size) var(--ds-tooltip-arrow-size) 0 var(--ds-tooltip-arrow-size);
+    border-color: var(--ds-tooltip-bg) transparent transparent transparent;
+  }
+}
+
+.position-bottom {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  
+  .tooltipArrow {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 var(--ds-tooltip-arrow-size) var(--ds-tooltip-arrow-size) var(--ds-tooltip-arrow-size);
+    border-color: transparent transparent var(--ds-tooltip-bg) transparent;
+  }
+}
+
+.position-left {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-8px);
+  
+  .tooltipArrow {
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: var(--ds-tooltip-arrow-size) 0 var(--ds-tooltip-arrow-size) var(--ds-tooltip-arrow-size);
+    border-color: transparent transparent transparent var(--ds-tooltip-bg);
+  }
+}
+
+.position-right {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%) translateX(8px);
+  
+  .tooltipArrow {
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: var(--ds-tooltip-arrow-size) var(--ds-tooltip-arrow-size) var(--ds-tooltip-arrow-size) 0;
+    border-color: transparent var(--ds-tooltip-bg) transparent transparent;
+  }
+}
+
+// ========================================
+// Screen Type
+// ========================================
+
+.screen-mobile {
+  .tooltip {
+    max-width: calc(100vw - 32px);
+  }
+}
+
