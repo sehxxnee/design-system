@@ -1,0 +1,222 @@
+@import '../../../styles/abstracts/tokens';
+@import '../../../styles/abstracts/mixins';
+
+.fileUploader {
+  position: relative;
+  width: 100%;
+  font-family: inherit;
+  
+  &.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  &.invalid {
+    .dropZone {
+      border-color: #dc2626;
+    }
+  }
+}
+
+.fileInput {
+  display: none;
+}
+
+.dropZone {
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  background-color: #fafafa;
+
+  &.active {
+    border-color: #3b82f6;
+    background-color: #eff6ff;
+  }
+
+  &:hover:not(.disabled) {
+    border-color: #9ca3af;
+  }
+}
+
+.uploadIcon {
+  margin-bottom: 1rem;
+  
+  // If using Icon atom, apply size through wrapper
+  span {
+    font-size: 3rem;
+    color: #6b7280;
+  }
+}
+
+.uploadContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.uploadLabel {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  
+  .required {
+    color: #dc2626;
+    margin-left: 0.25rem;
+  }
+}
+
+.dropLabel {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.browseButton {
+  // Styles are handled by Button atom
+  // Add any specific overrides here if needed
+}
+
+.infoMessage {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+}
+
+.errors {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: #fef2f2;
+  border-radius: 6px;
+  border: 1px solid #fecaca;
+}
+
+.errorMessage {
+  font-size: 0.875rem;
+  color: #dc2626;
+  margin-bottom: 0.25rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.uploadedItems {
+  margin-top: 1.5rem;
+  
+  &.items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+}
+
+.fileItemWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.uploadedItem {
+  // Styles are handled by FileItem atom
+  // Add any specific overrides here if needed
+}
+
+.fileProgress {
+  // Individual file progress bar
+  margin-top: -0.25rem;
+}
+
+.uploadingProgress {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.progressLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+}
+
+.overallProgress {
+  // Overall upload progress bar
+}
+
+.uploadActions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.startUploadButton {
+  // Styles are handled by Button atom
+  // Add any specific overrides here if needed
+}
+
+.resetButton {
+  // Styles are handled by Button atom
+  // Add any specific overrides here if needed
+}
+
+// Corner radius variations
+.corner-smooth {
+  .dropZone {
+    border-radius: 8px;
+  }
+}
+
+.corner-sharp {
+  .dropZone {
+    border-radius: 0;
+  }
+}
+
+.corner-rounded {
+  .dropZone {
+    border-radius: 16px;
+  }
+}
+
+// Appearance variations
+.appearance-default {
+  // Default styles already applied
+}
+
+.appearance-compact {
+  .dropZone {
+    padding: 1rem;
+  }
+
+  .uploadIcon {
+    margin-bottom: 0.5rem;
+    
+    span {
+      font-size: 2rem;
+    }
+  }
+
+  .uploadLabel {
+    font-size: 0.875rem;
+  }
+}
+
+// Image mode specific styles
+.imageMode {
+  .uploadedItems.items-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}
+

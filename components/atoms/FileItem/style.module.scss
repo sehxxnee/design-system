@@ -1,0 +1,157 @@
+@import '../../../styles/abstracts/tokens';
+@import '../../../styles/abstracts/mixins';
+
+.fileItem {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  gap: 0.75rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #f3f4f6;
+    border-color: #d1d5db;
+  }
+}
+
+.imagePreview {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #e5e7eb;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.fileInfo {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.fileName {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #1f2937;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fileSize {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+.fileMetadata {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+.fileActions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.actionButton {
+  // Styles are handled by Button atom
+  // Add any specific overrides here if needed
+}
+
+// Layout variations
+.layout-horizontal {
+  flex-direction: row;
+  
+  .fileInfo {
+    text-align: left;
+  }
+}
+
+.layout-vertical {
+  flex-direction: column;
+  text-align: center;
+  
+  .imagePreview {
+    width: 100%;
+    height: 120px;
+  }
+  
+  .fileInfo {
+    text-align: center;
+  }
+  
+  .fileActions {
+    justify-content: center;
+  }
+}
+
+// Size variations
+.size-sm {
+  padding: 0.5rem;
+  gap: 0.5rem;
+  
+  .imagePreview {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .fileName {
+    font-size: 0.75rem;
+  }
+  
+  .fileSize,
+  .fileMetadata {
+    font-size: 0.625rem;
+  }
+}
+
+.size-md {
+  // Default size - already defined above
+}
+
+.size-lg {
+  padding: 1rem;
+  gap: 1rem;
+  
+  .imagePreview {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .fileName {
+    font-size: 1rem;
+  }
+  
+  .fileSize,
+  .fileMetadata {
+    font-size: 0.875rem;
+  }
+}
+
+// Vertical layout specific sizes
+.layout-vertical.size-sm {
+  .imagePreview {
+    width: 100%;
+    height: 80px;
+  }
+}
+
+.layout-vertical.size-lg {
+  .imagePreview {
+    width: 100%;
+    height: 160px;
+  }
+}
+

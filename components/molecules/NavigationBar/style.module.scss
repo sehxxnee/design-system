@@ -1,0 +1,156 @@
+@import '../../../styles/abstracts/tokens';
+@import '../../../styles/abstracts/mixins';
+
+.navigationBar {
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.navItems {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem 0;
+  max-width: 100%;
+}
+
+.navItem {
+  // Override Button atom styles for navigation
+  flex: 1;
+  min-width: 0;
+  padding: 0.5rem 1rem !important;
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  position: relative;
+  color: #9ca3af !important;
+  transition: all 0.2s ease !important;
+
+  &:hover:not(:disabled) {
+    background: none !important;
+    opacity: 0.8;
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.95);
+    background: none !important;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+  }
+}
+
+.navContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  width: 100%;
+}
+
+.navIcon {
+  font-size: 1.5rem;
+  color: inherit;
+  transition: color 0.2s ease;
+
+  span {
+    font-size: 1.5rem;
+  }
+}
+
+.navLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: inherit;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+// Position variations
+.position-top {
+  border-top: none;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.position-bottom {
+  // Default styles already applied
+}
+
+// Color variations (for active state)
+.color-purple {
+  .navItem.active {
+    color: #8b5cf6 !important;
+  }
+}
+
+.color-blue {
+  .navItem.active {
+    color: #3b82f6 !important;
+  }
+}
+
+.color-red {
+  .navItem.active {
+    color: #ef4444 !important;
+  }
+}
+
+.color-black {
+  .navItem.active {
+    color: #1f2937 !important;
+  }
+}
+
+.color-yellow {
+  .navItem.active {
+    color: #f59e0b !important;
+  }
+}
+
+// Active indicator line (optional)
+.navItem.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 2px;
+  background-color: currentColor;
+  border-radius: 2px 2px 0 0;
+}
+
+.position-top .navItem.active::after {
+  bottom: auto;
+  top: 0;
+  border-radius: 0 0 2px 2px;
+}
+
+// Responsive
+@media (max-width: 640px) {
+  .navItem {
+    padding: 0.5rem 0.5rem !important;
+  }
+
+  .navIcon {
+    font-size: 1.25rem;
+
+    span {
+      font-size: 1.25rem;
+    }
+  }
+
+  .navLabel {
+    font-size: 0.625rem;
+  }
+}
+
