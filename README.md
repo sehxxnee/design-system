@@ -57,15 +57,3 @@ ComponentName/
 - Props are controlled using argTypes.  
 - `tags: ['autodocs']` enables automatic documentation generation.  
  
-
----
-
-## References
-
-- [Atomic Design by Brad Frost](https://atomicdesign.bradfrost.com/)  
-- [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/)  
-- [Storybook Documentation](https://storybook.js.org/docs)  
-- [SCSS Modules](https://github.com/css-modules/css-modules)  
-- [Web Accessibility (WAI-ARIA)](https://www.w3.org/WAI/ARIA/apg/)  
-
- 
